@@ -10,15 +10,13 @@
 import axios from 'axios';
 export default {
   name: 'app',
-  data() {
+  data(){
     return {
-      users: []
+      users:[]
     }
   },
-  mounted() {
-    // axios.get('/api/users').then(response=>{
-    axios.get('/api/users', {}, { headers: { 'Content-Type': 'application/json' } }).then(response => {
-      console.log(1111, response);
+  mounted(){
+    axios.get('/api/users').then(response=>{
       this.users = response.data;
     });
   }
@@ -26,4 +24,5 @@ export default {
 </script>
 
 <style>
+
 </style>
